@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varshitha K G | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+<style>
+  :root{
+    --accent:#0563bb;
+    --heading:#37517e;
+    --surface:#f6f9fe;
+    --text:#444444;
+    --dark:#1b2a41;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Roboto',sans-serif; color:var(--text); line-height:1.7; background:#fff;}
+  a{text-decoration:none; color:var(--accent);}
+  ul{list-style:none;}
+  img{max-width:100%; display:block;}
+  h1,h2,h3,h4,.font-heading{font-family:'Poppins',sans-serif; color:var(--dark);}
+  .container{max-width:1140px; margin:0 auto; padding:0 24px;}
+  section{padding:80px 0;}
+  .section-title{text-align:center; margin-bottom:50px;}
+  .section-title h2{font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--text); position:relative; padding-bottom:16px;}
+  .section-title h2::after{content:""; position:absolute; left:50%; bottom:0; transform:translateX(-50%); width:60px; height:3px; background:var(--accent); border-radius:2px;}
+  .section-title p{font-size:30px; font-weight:700; color:var(--dark); margin-top:4px;}
+  .btn{display:inline-block; font-family:'Raleway',sans-serif; font-weight:600; font-size:14px; padding:12px 28px; border-radius:50px; transition:.3s;}
+  .btn-accent{background:var(--accent); color:#fff;}
+  .btn-accent:hover{background:#049dd9; transform:translateY(-2px);}
+  .btn-outline{border:2px solid var(--accent); color:var(--accent);}
+  .btn-outline:hover{background:var(--accent); color:#fff;}
+
+  /* NAV */
+  header{position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,0.97); box-shadow:0 2px 20px rgba(0,0,0,0.06); backdrop-filter:blur(6px);}
+  .nav-wrap{display:flex; align-items:center; justify-content:space-between; height:70px;}
+  .logo{font-family:'Poppins',sans-serif; font-weight:700; font-size:20px; color:var(--dark);}
+  .logo span{color:var(--accent);}
+  nav ul{display:flex; gap:30px;}
+  nav a{font-family:'Raleway',sans-serif; font-size:14px; font-weight:600; color:var(--dark); letter-spacing:0.3px; padding:6px 2px; position:relative;}
+  nav a.active, nav a:hover{color:var(--accent);}
+  nav a.active::after{content:""; position:absolute; left:0; bottom:-4px; width:100%; height:2px; background:var(--accent);}
+
+  /* HERO */
+  .hero{
+    min-height:100vh; display:flex; align-items:center;
+    background:linear-gradient(160deg,#eef4fc 0%, #ffffff 55%);
+    position:relative; padding-top:70px;
+  }
+  .hero-grid{display:grid; grid-template-columns:1.15fr 0.85fr; gap:40px; align-items:center;}
+  .hero p.eyebrow{font-family:'Raleway',sans-serif; color:var(--accent); font-weight:600; letter-spacing:1px; margin-bottom:10px;}
+  .hero h1{font-size:48px; font-weight:700; line-height:1.2;}
+  .hero h1 em{font-style:normal; color:var(--accent);}
+  .hero .typed{font-family:'Poppins',sans-serif; font-size:22px; font-weight:500; color:var(--heading); margin-top:14px; min-height:32px;}
+  .hero .typed .cursor{color:var(--accent);}
+  .hero p.desc{margin-top:20px; max-width:480px; color:var(--text); font-size:15px;}
+  .hero-cta{margin-top:32px; display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .social-row{display:flex; gap:14px; margin-top:34px;}
+  .social-row a{width:38px; height:38px; border-radius:50%; border:1px solid #d6e2f0; display:flex; align-items:center; justify-content:center; color:var(--heading); transition:.25s;}
+  .social-row a:hover{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .hero-avatar{width:100%; max-width:320px; aspect-ratio:1; margin:0 auto; border-radius:50%;
+    background:linear-gradient(135deg,#0563bb,#37517e); display:flex; align-items:center; justify-content:center;
+    box-shadow:0 30px 60px -20px rgba(5,99,187,0.4); position:relative;}
+  .hero-avatar span{font-family:'Poppins',sans-serif; font-size:72px; font-weight:700; color:#fff;}
+  .hero-avatar::before{content:""; position:absolute; inset:-14px; border:2px dashed rgba(5,99,187,0.35); border-radius:50%; animation:spin 30s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+
+  /* ABOUT */
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:50px; align-items:center;}
+  .about-photo{background:var(--surface); border-radius:12px; padding:40px; text-align:center;}
+  .about-photo .ring{width:100%; max-width:220px; aspect-ratio:1; margin:0 auto; border-radius:50%; background:linear-gradient(135deg,#37517e,#0563bb); display:flex; align-items:center; justify-content:center;}
+  .about-photo .ring span{color:#fff; font-family:'Poppins',sans-serif; font-weight:700; font-size:46px;}
+  .about h3{font-size:24px; font-weight:700; margin-bottom:6px;}
+  .about .role{color:var(--accent); font-weight:600; font-family:'Raleway',sans-serif; margin-bottom:14px;}
+  .about-info{display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin:20px 0; list-style:none; padding:0;}
+  .about-info li{font-size:14px; padding:6px 0; border-bottom:1px solid #eee;}
+  .about-info li b{color:var(--dark); font-weight:600; margin-right:6px;}
+  .counters{display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:30px;}
+  .counter{text-align:center; background:var(--surface); border-radius:10px; padding:18px 8px;}
+  .counter .num{font-family:'Poppins',sans-serif; font-weight:700; font-size:26px; color:var(--accent);}
+  .counter .lbl{font-size:11.5px; color:var(--text); margin-top:4px; letter-spacing:.2px;}
+
+  /* SKILLS */
+  .skills-bg{background:var(--surface);}
+  .skills-grid{display:grid; grid-template-columns:1fr 1fr; gap:30px 50px;}
+  .skill-bar{margin-bottom:18px;}
+  .skill-bar .top{display:flex; justify-content:space-between; font-size:14px; font-weight:600; color:var(--dark); margin-bottom:6px;}
+  .skill-track{background:#e3ebf6; border-radius:6px; height:9px; overflow:hidden;}
+  .skill-fill{height:100%; background:linear-gradient(90deg,var(--accent),#37517e); border-radius:6px; width:0%; transition:width 1.2s ease;}
+
+  /* RESUME */
+  .resume-grid{display:grid; grid-template-columns:1fr 1fr; gap:50px;}
+  .resume-col h3{font-size:19px; font-weight:700; margin-bottom:26px; display:flex; align-items:center; gap:10px;}
+  .resume-col h3 i{color:var(--accent);}
+  .r-item{position:relative; padding-left:24px; padding-bottom:28px; border-left:2px solid #dde7f4;}
+  .r-item:last-child{padding-bottom:0;}
+  .r-item::before{content:""; position:absolute; left:-7px; top:2px; width:12px; height:12px; border-radius:50%; background:var(--accent); border:3px solid #fff; box-shadow:0 0 0 2px #dde7f4;}
+  .r-item .date{font-family:'Raleway',sans-serif; font-size:11.5px; font-weight:600; color:var(--accent); background:#eaf3fc; display:inline-block; padding:2px 10px; border-radius:20px; margin-bottom:6px;}
+  .r-item h4{font-size:16px; font-weight:700;}
+  .r-item .org{font-style:italic; font-size:13px; color:var(--text); margin-bottom:6px;}
+  .r-item ul{padding-left:18px; font-size:13.5px; color:var(--text); list-style:disc;}
+  .r-item li{margin-bottom:4px;}
+
+  /* PORTFOLIO */
+  .filters{display:flex; justify-content:center; gap:10px; margin-bottom:36px; flex-wrap:wrap;}
+  .filters button{font-family:'Raleway',sans-serif; font-size:13px; font-weight:600; padding:8px 20px; border-radius:20px; border:1px solid #dde7f4; background:#fff; color:var(--heading); cursor:pointer; transition:.25s;}
+  .filters button.active, .filters button:hover{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .portfolio-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:26px;}
+  .p-card{border-radius:12px; overflow:hidden; border:1px solid #eef2f7; transition:.3s;}
+  .p-card:hover{transform:translateY(-4px); box-shadow:0 20px 40px -18px rgba(5,99,187,0.28);}
+  .p-thumb{height:170px; display:flex; align-items:center; justify-content:center; position:relative;}
+  .p-thumb.iot{background:linear-gradient(135deg,#0563bb,#0aa1d1);}
+  .p-thumb.data{background:linear-gradient(135deg,#37517e,#5a7bb0);}
+  .p-thumb i{font-size:48px; color:rgba(255,255,255,0.9);}
+  .p-tag{position:absolute; top:12px; left:12px; background:rgba(255,255,255,0.92); color:var(--heading); font-family:'Raleway',sans-serif; font-size:10.5px; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:.4px;}
+  .p-body{padding:20px 22px;}
+  .p-body h4{font-size:16.5px; font-weight:700; margin-bottom:6px;}
+  .p-body p{font-size:13.5px; color:var(--text); margin-bottom:12px;}
+  .p-stack{display:flex; flex-wrap:wrap; gap:6px;}
+  .p-stack span{font-size:10.5px; background:var(--surface); color:var(--heading); padding:3px 9px; border-radius:20px; font-family:'Raleway',sans-serif; font-weight:600;}
+
+  /* CONTACT */
+  .contact-grid{display:grid; grid-template-columns:0.9fr 1.1fr; gap:50px;}
+  .c-info li{display:flex; gap:16px; margin-bottom:26px; align-items:flex-start;}
+  .c-info .icon{width:44px; height:44px; border-radius:50%; background:var(--surface); color:var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:17px;}
+  .c-info h5{font-size:14px; font-weight:700; color:var(--dark); margin-bottom:2px;}
+  .c-info p{font-size:13.5px; color:var(--text);}
+  .form-box{background:var(--surface); border-radius:12px; padding:32px;}
+  .form-row{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;}
+  .form-box input, .form-box textarea{width:100%; border:1px solid #dde7f4; border-radius:6px; padding:12px 14px; font-family:'Roboto',sans-serif; font-size:14px; background:#fff;}
+  .form-box textarea{grid-column:1/-1; min-height:110px; resize:vertical;}
+  .form-box .full{grid-column:1/-1;}
+
+  footer{background:var(--dark); color:#c8d3e6; padding:40px 0; text-align:center; font-size:13px;}
+  footer .f-name{font-family:'Poppins',sans-serif; color:#fff; font-weight:700; margin-bottom:6px;}
+  footer .f-social{display:flex; justify-content:center; gap:14px; margin:16px 0;}
+  footer .f-social a{width:34px; height:34px; border-radius:50%; border:1px solid #37507a; color:#c8d3e6; display:flex; align-items:center; justify-content:center;}
+  footer .f-social a:hover{background:var(--accent); border-color:var(--accent); color:#fff;}
+
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.show{opacity:1; transform:none;}
+
+  @media(max-width:900px){
+    .hero-grid, .about-grid, .resume-grid, .contact-grid{grid-template-columns:1fr;}
+    .skills-grid, .portfolio-grid, .counters{grid-template-columns:1fr 1fr;}
+    nav ul{display:none;}
+    .hero h1{font-size:36px;}
+  }
+  @media(max-width:560px){
+    .skills-grid, .portfolio-grid, .counters, .about-info, .form-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <div class="logo">Varshitha<span>.</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">WELCOME TO MY PORTFOLIO</p>
+      <h1>I'm <em>Varshitha K G</em></h1>
+      <div class="typed" id="typed"></div>
+      <p class="desc">Computer Science Engineering student specializing in Data Science &amp; AI/ML. I turn raw data into insight and connect sensors to the cloud — with hands-on internship experience in Python development, data analysis, and IoT.</p>
+      <div class="hero-cta">
+        <a class="btn btn-accent" href="#contact">Get In Touch</a>
+        <a class="btn btn-outline" href="#portfolio">View Work</a>
+      </div>
+      <div class="social-row">
+        <a href="https://github.com/varshithavar" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/varshitha-kg-931727370" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:varshithavarsh1031@gmail.com"><i class="bi bi-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-avatar"><span>VKG</span></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title"><h2>About</h2><p>Get To Know Me</p></div>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="ring"><span>VKG</span></div>
+      </div>
+      <div class="about reveal">
+        <h3>B.Tech Computer Science Engineering — Data Science &amp; AI/ML</h3>
+        <p class="role">GardenCity University, Bengaluru</p>
+        <p>Motivated Computer Science Engineering student with hands-on internship experience in software development, data analysis, and Python programming. Skilled in Python, SQL, and machine learning, with a strong interest in applying data-driven and IoT-based solutions to real-world problems.</p>
+        <ul class="about-info">
+          <li><b>Phone:</b>+91 85535 40571</li>
+          <li><b>City:</b>Karnataka, India</li>
+          <li><b>Email:</b>varshithavarsh1031@gmail.com</li>
+          <li><b>CGPA:</b>8.6 / 10</li>
+          <li><b>GitHub:</b>varshithavar</li>
+          <li><b>Status:</b>Open to internships</li>
+        </ul>
+        <div class="counters">
+          <div class="counter"><div class="num">3</div><div class="lbl">INTERNSHIPS</div></div>
+          <div class="counter"><div class="num">1</div><div class="lbl">CAPSTONE PROJECT</div></div>
+          <div class="counter"><div class="num">4+</div><div class="lbl">JOB SIMULATIONS</div></div>
+          <div class="counter"><div class="num">8.6</div><div class="lbl">CGPA</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-bg" id="skills">
+  <div class="container">
+    <div class="section-title"><h2>Skills</h2><p>What I Work With</p></div>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-bar reveal" data-level="88"><div class="top"><span>Python</span><span>88%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar reveal" data-level="78"><div class="top"><span>SQL</span><span>78%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar reveal" data-level="72"><div class="top"><span>Machine Learning</span><span>72%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar reveal" data-level="65"><div class="top"><span>Java</span><span>65%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+      <div>
+        <div class="skill-bar reveal" data-level="80"><div class="top"><span>Data Visualization</span><span>80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar reveal" data-level="68"><div class="top"><span>IoT / Arduino / GSM-GPS</span><span>68%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar reveal" data-level="75"><div class="top"><span>Pandas / NumPy / Scikit-learn</span><span>75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        <div class="skill-bar reveal" data-level="60"><div class="top"><span>Generative AI</span><span>60%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="container">
+    <div class="section-title"><h2>Resume</h2><p>Education &amp; Experience</p></div>
+    <div class="resume-grid">
+      <div class="resume-col reveal">
+        <h3><i class="bi bi-mortarboard"></i>Education</h3>
+        <div class="r-item">
+          <div class="date">2023 — 2027</div>
+          <h4>GardenCity University, Bengaluru</h4>
+          <div class="org">B.Tech in Computer Science Engineering (Data Science &amp; AI/ML) · CGPA 8.6</div>
+        </div>
+        <div class="r-item">
+          <div class="date">2023</div>
+          <h4>New Baldwin PU College</h4>
+          <div class="org">Pre-University Course · PCMC · 80%</div>
+        </div>
+      </div>
+      <div class="resume-col reveal">
+        <h3><i class="bi bi-briefcase"></i>Experience</h3>
+        <div class="r-item">
+          <div class="date">Jul 2026 — Jan 2027</div>
+          <h4>Python Development Intern</h4>
+          <div class="org">Zaalima Pvt. Ltd.</div>
+          <ul>
+            <li>Contributing to the design and development of Python-based applications and scripts.</li>
+            <li>Collaborating on coding, debugging, and feature implementation.</li>
+          </ul>
+        </div>
+        <div class="r-item">
+          <div class="date">Jun 2026 — Aug 2026</div>
+          <h4>Data Analyst Intern</h4>
+          <div class="org">Bluestock Fintech</div>
+          <ul>
+            <li>Completed a Mutual Fund Analysis project covering returns, risk, and category trends.</li>
+            <li>Performed data collection, cleaning, and exploratory analysis on fintech datasets.</li>
+          </ul>
+        </div>
+        <div class="r-item">
+          <div class="date">Jun 2026 — Jul 2026</div>
+          <h4>Software Development Intern</h4>
+          <div class="org">Cognify</div>
+          <ul>
+            <li>Contributed to software development tasks across the development lifecycle.</li>
+            <li>Assisted with coding, testing, and debugging in a collaborative team.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills-bg" id="portfolio">
+  <div class="container">
+    <div class="section-title"><h2>Portfolio</h2><p>Things I've Built</p></div>
+    <div class="filters">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="iot">IoT</button>
+      <button data-filter="data">Data</button>
+    </div>
+    <div class="portfolio-grid">
+      <div class="p-card" data-cat="iot">
+        <div class="p-thumb iot"><span class="p-tag">IoT · CAPSTONE</span><i class="bi bi-cpu"></i></div>
+        <div class="p-body">
+          <h4>Smart Safety Helmet System</h4>
+          <p>Wearable rider-safety system with live GPS tracking, accident-impact detection, and automated emergency alerts over GSM.</p>
+          <div class="p-stack"><span>Arduino</span><span>GPS Module</span><span>GSM Module</span><span>IoT</span></div>
+        </div>
+      </div>
+      <div class="p-card" data-cat="data">
+        <div class="p-thumb data"><span class="p-tag">DATA · FINTECH</span><i class="bi bi-graph-up-arrow"></i></div>
+        <div class="p-body">
+          <h4>Mutual Fund Analysis</h4>
+          <p>Analyzed fund performance data at Bluestock Fintech to surface insights on returns, risk, and category trends for investment reporting.</p>
+          <div class="p-stack"><span>Python</span><span>SQL</span><span>Excel</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-title"><h2>Contact</h2><p>Get In Touch</p></div>
+    <div class="contact-grid">
+      <ul class="c-info reveal">
+        <li><div class="icon"><i class="bi bi-geo-alt"></i></div><div><h5>Location</h5><p>Karnataka, India</p></div></li>
+        <li><div class="icon"><i class="bi bi-envelope"></i></div><div><h5>Email</h5><p>varshithavarsh1031@gmail.com</p></div></li>
+        <li><div class="icon"><i class="bi bi-telephone"></i></div><div><h5>Call</h5><p>+91 85535 40571</p></div></li>
+        <li><div class="icon"><i class="bi bi-github"></i></div><div><h5>GitHub</h5><p>github.com/varshithavar</p></div></li>
+      </ul>
+      <form class="form-box reveal" onsubmit="return sendMail(event)">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-row">
+          <input type="text" class="full" placeholder="Subject" required>
+          <textarea placeholder="Message" required></textarea>
+        </div>
+        <button class="btn btn-accent full" type="submit" style="border:none; cursor:pointer;">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="f-name">Varshitha K G</div>
+    <p>Data Science &amp; AI/ML · Karnataka, India</p>
+    <div class="f-social">
+      <a href="https://github.com/varshithavar" target="_blank" rel="noopener"><i class="bi bi-github"></i></a>
+      <a href="https://www.linkedin.com/in/varshitha-kg-931727370" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i></a>
+      <a href="mailto:varshithavarsh1031@gmail.com"><i class="bi bi-envelope"></i></a>
+    </div>
+    <p>© 2026 Varshitha K G. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // typed text effect
+  const roles = ["Data Science Enthusiast", "AI/ML Engineer", "Python Developer", "IoT Builder"];
+  const typedEl = document.getElementById('typed');
+  let ri = 0, ci = 0, deleting = false;
+  function tick(){
+    const word = roles[ri];
+    if(!deleting){
+      ci++;
+      if(ci > word.length){ deleting = true; setTimeout(tick, 1200); return; }
+    } else {
+      ci--;
+      if(ci === 0){ deleting = false; ri = (ri+1)%roles.length; }
+    }
+    typedEl.innerHTML = word.slice(0,ci) + '<span class="cursor">|</span>';
+    setTimeout(tick, deleting ? 45 : 85);
+  }
+  tick();
+
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+  }, {threshold:0.15});
+  revealEls.forEach(el=>io.observe(el));
+
+  // skill bars animate on view
+  const bars = document.querySelectorAll('.skill-bar');
+  const io2 = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const fill = e.target.querySelector('.skill-fill');
+        fill.style.width = e.target.dataset.level + '%';
+        io2.unobserve(e.target);
+      }
+    });
+  }, {threshold:0.4});
+  bars.forEach(b=>io2.observe(b));
+
+  // portfolio filter
+  document.querySelectorAll('.filters button').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.p-card').forEach(card=>{
+        card.style.display = (f==='all' || card.dataset.cat===f) ? '' : 'none';
+      });
+    });
+  });
+
+  // active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', ()=>{
+    let current = '';
+    sections.forEach(sec=>{
+      const top = sec.offsetTop - 90;
+      if(window.scrollY >= top) current = sec.getAttribute('id');
+    });
+    navLinks.forEach(a=>{
+      a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+    });
+  });
+
+  function sendMail(e){
+    e.preventDefault();
+    window.location.href = "mailto:varshithavarsh1031@gmail.com";
+    return false;
+  }
+</script>
+
+</body>
+</html>
